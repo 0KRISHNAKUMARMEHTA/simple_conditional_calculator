@@ -7,9 +7,16 @@
 </head>
 <body>
     <script>
-        let num1 = Number(prompt("Enter first number:"));
+        let num1 = parseFloat(prompt("Enter first number:"));
+        while (Number.isNaN(num1)){
+            num1=parseFloat(prompt("Please enter valid number"))
+        }
         let operation = prompt("Enter (+, -, x, /):");
-        let num2 = Number(prompt("Enter second number:"));
+
+        let num2 = parseFloat(prompt("Enter second number:"));
+        while (Number.isNaN(num2)){
+            num2=parseFloat(prompt("Please enter valid number"))
+        }
         let result;
 
         if (operation === "+") {
@@ -18,7 +25,7 @@
             result = num1 - num2;
         } else if (operation === "x" || operation === "*") {
             result = num1 * num2;
-        } else if (operation === "/") {
+        } else if (operation === "/" || operation ==="%") {
             result = num1 / num2;
         } else {
             alert("Invalid operation.");
